@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:show, :edit, :update, :destroy]
 
   def show    #詳細表示（特定のidのユーザを）
     @user = User.find(params[:id])
   end
 
-  def new
-    @user = User.new  　#新規登録画面を表示する
+  def new    #新規登録画面を表示する
+    @user = User.new
   end
   
   def create       #登録処理を行う
