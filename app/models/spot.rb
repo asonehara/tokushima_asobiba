@@ -3,7 +3,9 @@ class Spot < ApplicationRecord
   
   validates :name, presence: true
   
-  mount_uploader :image1, ImgUploader
-  mount_uploader :image2, ImgUploader
-  mount_uploader :image3, ImgUploader
+  mount_uploader :image1,ImgUploader
+  mount_uploader :image2,ImgUploader
+  mount_uploader :image3,ImgUploader
+  
+  has_many :likes
 end
