@@ -1,0 +1,11 @@
+<h1> spot名：<%= @spot.name %></h1>  <!--どう表示するか考えないとだ-->
+
+<p><%= @spot.description %></p>
+
+<%= image_tag @spot.image1.to_s %>
+<%= image_tag @spot.image2.to_s %>
+<%= image_tag @spot.image3.to_s %>
+
+<%= link_to '編集', edit_spot_path(@spot) %>
+<%= link_to '削除', @spot, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+

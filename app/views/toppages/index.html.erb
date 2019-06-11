@@ -1,6 +1,34 @@
 <div class="center jumbotron">
   <div class="text-center">
     <h1>とくしまのアソビバ！</h1>
-    <%= link_to '会員登録!', signup_path, class: 'btn btn-lg btn-primary' %>
+    
   </div>
 </div>
+
+<div class = "category_container">
+  <div class="category1" >
+    <h3><%= link_to 'サーフィン', category_path(1) %></h3>
+    <img>
+    <p>秘境のサーフスポットである徳島県での有名スポットからマイナースポットまで紹介！</p>
+    <% if admin? %>
+      <h5><%= link_to '投稿', new_category_spot_path(1) %></h5>
+    <% end %>
+  </div>
+  <div class="category2">
+    <h3><%= link_to 'キャンプ', category_path(2) %></h3>
+    <img>
+    <p>徳島県内のキャンプ場の詳しい設備を紹介！たまに県外もあるかも・・</p>
+    <% if admin? %>
+      <h5><%= link_to '投稿', new_category_spot_path(2) %></h5>
+    <% end %>
+  </div>
+  <div class="category3">
+    <h3><%= link_to 'アウトドア', category_path(3) %></h3>
+    <img>
+    <p>外遊びができるアウトドアスポットを紹介！</p>
+    <% if admin? %>
+      <h5><%= link_to '投稿', new_category_spot_path(3) %></h5>
+    <% end %>
+  </div>
+</div>
+

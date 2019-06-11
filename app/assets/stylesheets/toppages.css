@@ -1,0 +1,29 @@
+.category_container{
+    width:100%;
+    height:300px;
+    background-color:pink;
+    display:flex;
+}
+
+.category_container h3{
+    text-align:center;
+}
+
+.category_container p{
+    color:gray;
+    font-family:fantasy;
+}
+
+.category1{
+    width:33%;
+    border:1px solid white;
+    
+}
+.category2{
+    width:34%;
+    border: 1px solid white;
+}
+.category3{
+    width:33%;
+    border: 1px solid white;
+}

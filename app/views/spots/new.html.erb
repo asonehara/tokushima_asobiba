@@ -1,0 +1,30 @@
+<div class="row">
+    <aside class="col-sm-4">
+      <%= form_with(model: [@category, @spot], local: true) do |f| %>
+
+        <div class="form-group">
+          <%= f.label :name, 'スポット名'%>
+          <%= f.text_area :name, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :description, '情報' %>
+          <%= f.text_area :description, class: 'form-control', rows:5%>
+        </div>
+        <div class="form-group">
+          <%= f.label :image1 %>
+          <%= f.file_field :image1 %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image2 %>
+          <%= f.file_field :image2 %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image3 %>
+          <%= f.file_field :image3 %>
+        </div>
+        
+        <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </aside>
+</div>
