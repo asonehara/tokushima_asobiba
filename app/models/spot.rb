@@ -8,4 +8,6 @@ class Spot < ApplicationRecord
   mount_uploader :image3,ImgUploader
   
   has_many :likes
+  
+  has_many :comments
 end

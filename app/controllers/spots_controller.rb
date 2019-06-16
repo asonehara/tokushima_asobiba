@@ -18,6 +18,9 @@ class SpotsController < ApplicationController
     
     def show
         @spot = Spot.find(params[:id])
+        
+        @comments = @spot.comments.page(params[:page]) #コメント一覧
+        @comment = Comment.new  #コメント投稿機能
     end
     
     def edit   #編集画面表示

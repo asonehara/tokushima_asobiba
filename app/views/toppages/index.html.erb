@@ -1,33 +1,32 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>とくしまのアソビバ！</h1>
+<div class="top-container">
+  <div class="topimage">
     
   </div>
 </div>
 
 <div class = "category_container">
-  <div class="category1" >
-    <h3><%= link_to 'サーフィン', category_path(1) %></h3>
+  <div class="category1">
+    <h3><%= link_to 'サーフィン', category_path(1), class: 'btn btn-lg btn-info'%></h3>
     <img>
     <p>秘境のサーフスポットである徳島県での有名スポットからマイナースポットまで紹介！</p>
     <% if admin? %>
-      <h5><%= link_to '投稿', new_category_spot_path(1) %></h5>
+      <h5><%= link_to '投稿', new_category_spot_path(1), class: 'btn btn-outline-dark'%></h5>
     <% end %>
   </div>
   <div class="category2">
-    <h3><%= link_to 'キャンプ', category_path(2) %></h3>
+    <h3><%= link_to 'キャンプ', category_path(2), class: 'btn btn-lg btn-warning' %></h3>
     <img>
     <p>徳島県内のキャンプ場の詳しい設備を紹介！たまに県外もあるかも・・</p>
     <% if admin? %>
-      <h5><%= link_to '投稿', new_category_spot_path(2) %></h5>
+      <h5><%= link_to '投稿', new_category_spot_path(2), class: 'btn btn-outline-dark' %></h5>
     <% end %>
   </div>
   <div class="category3">
-    <h3><%= link_to 'アウトドア', category_path(3) %></h3>
+    <h3><%= link_to 'アウトドア', category_path(3), class: 'btn btn-lg btn-success' %></h3>
     <img>
     <p>外遊びができるアウトドアスポットを紹介！</p>
     <% if admin? %>
-      <h5><%= link_to '投稿', new_category_spot_path(3) %></h5>
+      <h5><%= link_to '投稿', new_category_spot_path(3), class: 'btn btn-outline-dark' %></h5>
     <% end %>
   </div>
 </div>

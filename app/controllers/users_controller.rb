@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
   def show    #詳細表示（特定のidのユーザを）
     @user = User.find(params[:id])
+     
+    @liked_spots = @user.spots.page(params[:page]) #お気に入り一覧
+    counts(@user)      #お気に入りスポットの数をカウント
   end
 
   def new    #新規登録画面を表示する
@@ -41,6 +44,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
   end
+  
+  
 end
 
 private

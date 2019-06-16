@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_125321) do
+ActiveRecord::Schema.define(version: 2019_06_14_215409) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.string "content"
+    t.integer "star"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_comments_on_spot_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -24,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_125321) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["spot_id"], name: "index_likes_on_spot_id"
+    t.index ["user_id", "spot_id"], name: "index_likes_on_user_id_and_spot_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -51,6 +63,8 @@ ActiveRecord::Schema.define(version: 2019_06_11_125321) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "comments", "spots"
+  add_foreign_key "comments", "users"
   add_foreign_key "likes", "spots"
   add_foreign_key "likes", "users"
   add_foreign_key "spots", "categories"

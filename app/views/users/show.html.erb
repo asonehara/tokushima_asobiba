@@ -1,4 +1,24 @@
+<div class="row">
+  <aside class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title"><%= @user.name %></h3>
+      </div>
+      <div class="card-body">
+        <!--顔写真をどうするか？-->
+      </div>
+    </div>
+  </aside>
+    <div class="col-sm-8">
+      <ul class="nav nav-tabs nav-justified mb-3">
+        <li class="nav-item"><a href="<%= spots_user_path(@user) %>" class="nav-link">お気に入りスポット <span class="badge badge-secondary"><%= @count_likes %></span></a></li>
+      </ul>
+      
+      <% @liked_spots.any? && @liked_spots.each do |spot| %>
+        <%= link_to spot.name, spot %>　　<!--要注意-->
+      <% end %>
+    </div>
+</div>
 
-<h1>ユーザー名：<%= @user.name %></h1>
 
 <%= link_to 'ログアウト', logout_path, method: :delete %>

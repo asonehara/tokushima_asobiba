@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   get 'categories/index'
   get 'categories/show'
   root to: 'toppages#index'
@@ -11,10 +13,15 @@ Rails.application.routes.draw do
     resources :spots
   end
   
-  
-  
   get 'signup', to: 'users#new'
-  resources :users, only: [:show, :create, :edit, :update, :destroy]
+  resources :users, only: [:show, :create, :edit, :update, :destroy] do
+    member do
+      get :spots
+    end
+  end
+  
+  resources :likes, only:[:create, :destroy]
+  resources :comments, only:[:create]
   
   
 end
