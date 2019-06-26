@@ -42,11 +42,11 @@ ActiveRecord::Schema.define(version: 2019_06_14_215409) do
   create_table "spots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "category_id"
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.string "image1"
     t.string "image2"
     t.string "image3"
-    t.string "address"
+    t.string "address", limit: 1000
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_spots_on_category_id"

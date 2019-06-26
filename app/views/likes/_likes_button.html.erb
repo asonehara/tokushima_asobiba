@@ -1,11 +1,13 @@
-<% if current_user.likes?(spot) %>
-    <%= form_with(model: current_user.likes.find_by(spot_id: spot.id), local: true, method: :delete) do |f| %>
-      <%= hidden_field_tag :spot_id, spot.id %>
-      <%= f.submit 'unlike', class: 'btn btn-danger btn-block' %>
-    <% end %>
-<% else %>
-    <%= form_with(model: current_user.likes.build, local: true) do |f| %>
-      <%= hidden_field_tag :spot_id, spot.id %>
-      <%= f.submit 'like', class: 'btn btn-primary btn-block' %>
-    <% end %>
-<% end %>
+<div class="text-right">
+  <% if current_user.likes?(spot) %>
+      <%= form_with(model: current_user.likes.find_by(spot_id: spot.id), local: true, method: :delete) do |f| %>
+        <%= hidden_field_tag :spot_id, spot.id %>
+        <%= f.submit 'お気に入り解除', class: 'btn btn-danger btn-sm' %>
+      <% end %>
+  <% else %>
+      <%= form_with(model: current_user.likes.build, local: true) do |f| %>
+        <%= hidden_field_tag :spot_id, spot.id %>
+        <%= f.submit 'お気に入り', class: 'btn btn-primary btn-sm' %>
+      <% end %>
+  <% end %>
+</div>

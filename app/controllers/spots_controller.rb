@@ -4,6 +4,7 @@ class SpotsController < ApplicationController
     def new
         @spot = Spot.new
         @category = Category.find(params[:category_id])
+        
     end
     
     def create
@@ -50,7 +51,7 @@ class SpotsController < ApplicationController
     private
     
     def spot_params
-        params.require(:spot).permit(:name, :description, :image1, :image2, :image3)
+        params.require(:spot).permit(:name, :description, :image1, :image2, :image3, :address)
     end
     
     

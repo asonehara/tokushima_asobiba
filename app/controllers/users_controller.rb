@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show    #詳細表示（特定のidのユーザを）
     @user = User.find(params[:id])
      
-    @liked_spots = @user.spots.page(params[:page]) #お気に入り一覧
+    @liked_spots = @user.liked_spots.page(params[:page]) #お気に入り一覧
     counts(@user)      #お気に入りスポットの数をカウント
   end
 
@@ -45,11 +45,14 @@ class UsersController < ApplicationController
     @user.destroy
   end
   
+  def spots
+    redirect_to "http://www.yahoo.co.jp/"
+  end
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
+  end
   
 end
 
-private
-
-def user_params
-  params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
-end
