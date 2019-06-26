@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: tokushima_asobiba_production
   username: tokushima_asobiba
   password: <%= ENV['TOKUSHIMA_ASOBIBA_DATABASE_PASSWORD'] %>
