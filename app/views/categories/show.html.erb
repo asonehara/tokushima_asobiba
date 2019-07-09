@@ -1,11 +1,12 @@
+<h1 class="text-center"><%= @category.name %></h1>
 
-
-<h1 class="text-center"><%= @category.name %></h1>     <!--カテゴリー一覧ページ-->
-
-<dl>
-    <% @spots.each do |spot| %>
-        <dt><%= link_to spot.name, spot %></dt>
-        <dd><%= spot.description.truncate(50) %></dd>
-    <% end %>
-</dl>
-
+<% @spots.each do |spot| %>  
+  <div class="card">
+    <div class="card-header">
+      <%= link_to spot.name, spot %>
+    </div>
+      <div class="card-body">
+        <%= spot.description.truncate(50) %>
+      </div>
+  </div>
+<% end %>
