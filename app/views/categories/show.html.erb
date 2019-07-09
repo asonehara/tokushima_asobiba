@@ -2,10 +2,10 @@
 
 <h1 class="text-center"><%= @category.name %></h1>     <!--カテゴリー一覧ページ-->
 
-<ul>
+<dl>
     <% @spots.each do |spot| %>
-    <li><%= link_to spot.name, spot %></li>
+        <dt><%= link_to spot.name, spot %></dt>
+        <dd><%= spot.description.truncate(50) %></dd>
     <% end %>
-    
-</ul>
+</dl>
 
