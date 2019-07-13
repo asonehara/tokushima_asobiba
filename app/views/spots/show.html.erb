@@ -3,10 +3,12 @@
 <%= render 'likes/likes_button', spot: @spot %>
 
 
-<div class="spot-image">
-  <div class="photo"><%= image_tag @spot.image1.to_s %></div>
-  <div class="photo"><%= image_tag @spot.image2.to_s %></div>
-  <div class="photo"><%= image_tag @spot.image3.to_s %></div>
+<div class="spot-image container-fluid">
+  <div class="row">
+    <div class="photo col-md-4"><%= image_tag @spot.image1.to_s %></div>
+    <div class="photo col-md-4"><%= image_tag @spot.image2.to_s %></div>
+    <div class="photo col-md-4"><%= image_tag @spot.image3.to_s %></div>
+  </div>
 </div>
 <div class="spot-description">
   <div class="jumbotron">
