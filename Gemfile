@@ -69,3 +69,5 @@ end
 gem 'cloudinary'
 
 gem 'execjs'
+
+gem 'rails_autolink'

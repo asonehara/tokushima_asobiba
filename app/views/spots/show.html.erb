@@ -12,7 +12,7 @@
 </div>
 <div class="spot-description">
   <div class="jumbotron">
-     <p><%= simple_format(h(@spot.description)) %></p>
+     <p><%= auto_link(simple_format(h(@spot.description))) %></p>
   </div>
 </div>
 
